@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Menu Guide - Your AI-powered menu guide</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.1"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-notice">
+            <h1>🍽️ AI Menu Guide</h1>
+            <p>Your AI-powered menu guide: translate, explain, visualize.</p>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div id="upload-area" class="upload-area" tabindex="0">
+                <div class="upload-icon">📷</div>
+                <h3>Upload Menu Photo</h3>
+                <p>Drag & drop or click to select a menu image</p>
+                <p class="upload-hint">Supports: JPG, PNG, WEBP (max 20MB)</p>
+                <input type="file" id="menu-image-input" accept="image/*" style="display: none;">
+            </div>
+            
+            <!-- Image Preview -->
+            <div id="image-preview" class="image-preview" style="display: none;">
+                <img id="preview-img" alt="Menu preview">
+                <button id="remove-image" class="remove-btn" aria-label="Remove image">&times;</button>
+            </div>
+        </div>
+
+        <!-- API Key Section -->
+        <div class="api-section">
+            <label for="openai-key">OpenAI API Key:</label>
+            <div class="api-input-group">
+                <input type="password" id="openai-key" placeholder="sk-..." autocomplete="off">
+                <button type="button" id="clear-key-btn" class="clear-btn" title="Clear API key">Clear</button>
+            </div>
+            <p class="api-hint">
+                🔑 Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a> |
+                🔒 Used only for this session
+            </p>
+        </div>
+
+        <!-- Process Button -->
+        <button id="process-image-btn" class="process-btn" disabled>
+            🚀 Process Menu & Find Similar Dishes
+        </button>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing...</p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="results-section" style="display: none;">
+            <h2>🍽️ Similar Dishes Found</h2>
+            <p class="result-description">
+                Based on text-to-image similarity using CLIP embeddings. Each dish name from your menu is compared with our database of dish images.
+            </p>
+            <div id="results-container"></div>
+        </div>
+
+        <!-- Console Section -->
+        <div class="console-section">
+            <h2>📊 Processing Log</h2>
+            <div id="console-output" class="console-output"></div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="how-it-works">
+            <h3>🔍 How It Works</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>📸 Upload Menu</h4>
+                        <p>Upload a photo of any menu (any language) or take a photo with your camera</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>🤖 AI Analysis</h4>
+                        <p>OpenAI Vision API extracts and translates dish names to English</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>🧠 Text-to-Image Search</h4>
+                        <p>CLIP model converts dish names to text embeddings and finds similar dish images</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>🍽️ Discover Dishes</h4>
+                        <p>See up to 3 similar dishes with key ingredients for each menu item</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="data/dish_embeddings_data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
