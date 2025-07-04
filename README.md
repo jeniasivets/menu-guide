@@ -14,14 +14,14 @@ The project's live demo runs at https://jeniasivets.github.io/menu-guide/
 
 ## Features
 ### Tech stack
-- **Vanilla JavaScript + CSS**: Modern ES6+ features with async/await
+- **Vanilla JavaScript + CSS**
 - **Transformers.js**: Client-side CLIP model inference using Xenova/clip-vit-base-patch32
 - **Real-time Processing**: Live console output and progress indicators
 
 
 ### Models
 - **OpenAI GPT-4**: Analyse text on image + Multi-step validation for image quality filtering
-- **CLIP (Contrastive Language-Image Pre-training)**: Visual similarity matching
+- **CLIP (Contrastive Language-Image Pre-training)**: Visual & Text similarity matching
 
 
 ### Notes
@@ -33,7 +33,7 @@ The project's live demo runs at https://jeniasivets.github.io/menu-guide/
 ## Project Structure
 - `app.js`, `index.html`, `style.css`: The web application
 - `data/`: Embedding metadata for the app
-- `scripts/`: All data pipeline scripts and dish lists to collect and process images
+- `scripts/`: All data pipeline scripts to collect and process images
 
 
 
