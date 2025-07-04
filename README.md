@@ -2,6 +2,8 @@
 
 This project is a web application that uses AI to analyze handwritten menu images, extract dish names, translate them to English, and find visually similar dishes from a curated database. The goal is to help users understand and visualize unfamiliar dishes from menus in any language.
 
+The project's live demo runs at https://jeniasivets.github.io/menu-guide/
+
 ## Overview
 - Upload a photo of a handwritten menu (any language)
 - The app uses OpenAI's GPT API to extract and translate dish names
