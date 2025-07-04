@@ -31,16 +31,17 @@ The project's live demo runs at https://jeniasivets.github.io/menu-guide/
 
 
 ## Project Structure
-- `app.js`, `index.html`, `style.css`: The web application
-- `data/`: Embedding metadata for the app
-- `scripts/`: All data pipeline scripts to collect and process images
 
-
+```
+├── app.js, index.html, style.css    # Web application logic
+├── data/                            # Embedding metadata for the app 
+└── scripts/                         # Data pipeline scripts to collect and process images
+```
 
 ## Data Pipeline
 The image database is built and maintained with a set of scripts that automate the collection, filtering, and embedding of dish images.
 
-[//]: # (### Processing Pipeline)
+
 - **Image Scraping**: Automated collection of high-quality dish images
 - **Filtering**: GPT-powered image quality and relevance filtering
 - **Embedding Generation**: CLIP embeddings for visual similarity search
